@@ -1,0 +1,8 @@
+## Help
+
+The application allows to display and compare ratings of the players with classical FIDE ELO rating more than 2400.
+
+This rating is an official measure of chess player strength. The list of registered players and their ratings is updated every month. It is available for [download](http://ratings.fide.com/download.phtml).
+
+You can select multiple players by name and the plot shows historical changes of a rating since 2000.
+Date range can be changed.

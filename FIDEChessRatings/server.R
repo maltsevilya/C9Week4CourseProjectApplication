@@ -3,7 +3,7 @@ library(plotly)
 library(dplyr)
 library(lubridate)
 
-playersData <- read.csv("../over2400.csv") %>%
+playersData <- read.csv("over2400.csv") %>%
     mutate(date = parse_date_time(date, c("%y-%m-%d"))) %>%
     mutate(name = as.character(name))
 
@@ -15,7 +15,10 @@ shinyServer(function(input, output, session) {
             distinct() %>%
             arrange(name)
         names <- names$name
-        updateSelectInput(session, "players", choices = names)
+        updateSelectInput(session,
+                          "players",
+                          choices = names,
+                          selected = "Carlsen, Magnus")
     })
 
     selectedPlayersData <- reactive({
@@ -43,6 +46,15 @@ shinyServer(function(input, output, session) {
                 y = ~rating,
                 color = ~name,
                 type = "scatter",
-                mode = "lines")
+                mode = "lines") %>%
+            layout(
+                title = "Ratings",
+                xaxis = list(
+                    title = "Date"
+                ),
+                yaxis = list(
+                    title = "Rating"
+                )
+            )
     })
 })
