@@ -48,7 +48,6 @@ shinyServer(function(input, output, session) {
                 type = "scatter",
                 mode = "lines") %>%
             layout(
-                title = "Ratings",
                 xaxis = list(
                     title = "Date"
                 ),

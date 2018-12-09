@@ -11,11 +11,11 @@ shinyUI(
                      sidebarPanel(
                          textOutput("text"),
                          selectInput("players",
-                                     label = "Players:",
+                                     label = "Find and choose players:",
                                      multiple = TRUE,
                                      choices = c("Choose several" = ""),
                                      selected = "Carlsen, Magnus"),
-                         dateRangeInput("daterange", "Date range:",
+                         dateRangeInput("daterange", "Select date range:",
                                         start = "2001-01-01",
                                         end   = "2018-12-01",
                                         min = "2001-01-01",
